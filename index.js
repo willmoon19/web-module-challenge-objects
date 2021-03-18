@@ -52,17 +52,16 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   /*Your code here*/
-  discount: function(string){
-    if(string === "teacher" || "student"){
-      return burger.price *= .75;
+  discount: function(customer){
+    if(customer === "teacher" || customer === "student"){
+      return this.price - (this.price * .25);
     } else {
-        return burger.price *= .9;
+        return this.price - (this.price * .1);
     }
   }
 }
 
-
-
+console.log(burger.discount("public"));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
